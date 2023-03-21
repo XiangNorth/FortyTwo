@@ -1,104 +1,47 @@
-import { createStyles, Header, Menu, Group, Center, Burger, Container, rem } from '@mantine/core';
-import { useDisclosure } from '@mantine/hooks';
-import { IconChevronDown } from '@tabler/icons-react';
-import { MantineLogo } from '@mantine/ds';
-
-const useStyles = createStyles((theme) => ({
-  inner: {
-    height: rem(56),
-    display: 'flex',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-  },
-
-  links: {
-    [theme.fn.smallerThan('sm')]: {
-      display: 'none',
-    },
-  },
-
-  burger: {
-    [theme.fn.largerThan('sm')]: {
-      display: 'none',
-    },
-  },
-
-  link: {
-    display: 'block',
-    lineHeight: 1,
-    padding: `${rem(8)} ${rem(12)}`,
-    borderRadius: theme.radius.sm,
-    textDecoration: 'none',
-    color: theme.colorScheme === 'dark' ? theme.colors.dark[0] : theme.colors.gray[7],
-    fontSize: theme.fontSizes.sm,
-    fontWeight: 500,
-
-    '&:hover': {
-      backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[6] : theme.colors.gray[0],
-    },
-  },
-
-  linkLabel: {
-    marginRight: rem(5),
-  },
-}));
-
-interface HeaderSearchProps {
-  links: { link: string; label: string; links: { link: string; label: string }[] }[];
-}
-
-export function HeaderMenu({ links }: HeaderSearchProps) {
-  const [opened, { toggle }] = useDisclosure(false);
-  const { classes } = useStyles();
-
-  const items = links.map((link) => {
-    const menuItems = link.links?.map((item) => (
-      <Menu.Item key={item.link}>{item.label}</Menu.Item>
-    ));
-
-    if (menuItems) {
-      return (
-        <Menu key={link.label} trigger="hover" transitionProps={{ exitDuration: 0 }} withinPortal>
-          <Menu.Target>
-            <a
-              href={link.link}
-              className={classes.link}
-              onClick={(event) => event.preventDefault()}
-            >
-              <Center>
-                <span className={classes.linkLabel}>{link.label}</span>
-                <IconChevronDown size="0.9rem" stroke={1.5} />
-              </Center>
-            </a>
-          </Menu.Target>
-          <Menu.Dropdown>{menuItems}</Menu.Dropdown>
-        </Menu>
-      );
-    }
-
+export default function Header() {
     return (
-      <a
-        key={link.label}
-        href={link.link}
-        className={classes.link}
-        onClick={(event) => event.preventDefault()}
-      >
-        {link.label}
-      </a>
-    );
-  });
-
-  return (
-    <Header height={56} mb={120}>
-      <Container>
-        <div className={classes.inner}>
-          <MantineLogo size={28} />
-          <Group spacing={5} className={classes.links}>
-            {items}
-          </Group>
-          <Burger opened={opened} onClick={toggle} className={classes.burger} size="sm" />
+        <div className="navbar bg-base-100">
+            <div className="navbar-start">
+                <div className="dropdown">
+                    <label tabIndex={0} className="btn btn-ghost lg:hidden">
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
+                    </label>
+                    <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
+                        <li><a>首页</a></li>
+                        <li tabIndex={0}>
+                            <a className="justify-between">
+                                联系我们
+                                <svg className="fill-current" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+                            </a>
+                            <ul className="p-2 ml-3 shadow bg-base-100">
+                                <li><a>微信</a></li>
+                                <li><a>Slack</a></li>
+                            </ul>
+                        </li>
+                        <li><a>关于</a></li>
+                    </ul>
+                </div>
+                <a className="btn btn-ghost normal-case text-xl"><span className="text-primary">Forty</span>Two</a>
+            </div>
+            <div className="navbar-center hidden lg:flex">
+                <ul className="menu menu-horizontal px-1">
+                    <li><a>首页</a></li>
+                    <li tabIndex={0}>
+                        <a>
+                            联系我们
+                            <svg className="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" /></svg>
+                        </a>
+                        <ul className="p-2 shadow bg-base-100">
+                            <li><a>微信</a></li>
+                            <li><a>Slack</a></li>
+                        </ul>
+                    </li>
+                    <li><a>关于</a></li>
+                </ul>
+            </div>
+            <div className="navbar-end">
+                <a className="btn btn-primary m-1">立即下载</a>
+            </div>
         </div>
-      </Container>
-    </Header>
-  );
+    )
 }
