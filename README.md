@@ -1,38 +1,79 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# FortyTwo-Refactor
+
+This project is a website refactored by Next.js, Tailwind CSS and DaisyUI.
+
+## Tech Stack
+
+The main libraries/technologies used in this project are:
+
+- Next.js: a React-based framework that provides server-side rendering capabilities;
+- Tailwind CSS: a CSS framework based on atomic classes that provides a fast styling layout capability;
+- DaisyUI: a component library based on Tailwind CSS that provides many common UI components.
 
 ## Getting Started
 
-First, run the development server:
+1. Clone this repository:
+
+```bash
+git clone https://github.com/XiangNorth/FortyTwo.git
+```
+
+2. Install dependencies:
+
+```bash
+cd FortyTwo/
+npm install
+```
+
+3. Start the local server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+4. View the project in the browser:
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+```bash
+http://localhost:3000
+```
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+## Deployment
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+You can use cloud hosting services like Vercel or Netlify to deploy this project. Please refer to their documentation for specific deployment methods.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Feature List
 
-## Learn More
+- [ ] Index page
+- [ ] Article Pages
+- [ ] About page
 
-To learn more about Next.js, take a look at the following resources:
+## Directory Structure
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```
+.
+├── components
+│   ├── header.tsx
+│   ├── footer.tsx
+│   └── ...
+├── pages
+│   ├── index.tsx
+│   └── ...
+├── public
+│   ├── images
+│   └── ...
+├── styles
+│   ├── globals.css
+│   └── ...
+├── .gitignore
+├── next.config.js
+├── package.json
+└── README.md
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Contributing
 
-## Deploy on Vercel
+Contributions and pull requests are welcome! You can also submit issues and suggestions in the Issues section.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## License
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+This project is licensed under the MIT License. See the [LICENSE](./LICENSE) file for details.
