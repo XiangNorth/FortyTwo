@@ -35,7 +35,7 @@ export default function Footer() {
             </footer>
             <footer className="footer p-10 border-t bg-base-200 text-base-content border-base-300">
                 <div className="items-center grid-flow-col">
-                    <Image width='60' height="60" src="/logo.webp" priority loading="eager" alt="42 Logo" />
+                    <Image width='60' height="60" src="/logo.webp" priority alt="42 Logo" />
                     <p><b>DON&apos;T PANIC</b><br />42, The answer to life, the universe, and everything.<br /><a href="http://beian.miit.gov.cn/" target="_blank">苏ICP备 2022036518</a></p>
                 </div>
                 <div className="md:place-self-center md:justify-self-end">
