@@ -11,7 +11,7 @@ export default function Intro() {
             </button>
           </div>
         </div>
-        <div className="card w-96 bg-base-100 shadow-xl">
+        <div className="card w-full bg-base-100 shadow-xl md:w-96">
           <div className="card-body gap-10">
             <p className='card-title'><i>”信息是用来消除不确定性的东西”</i></p>
             <div className="card-actions justify-end">
