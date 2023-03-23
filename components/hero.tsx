@@ -5,7 +5,7 @@ export default function Hero() {
         <div className="hero min-h-screen bg-base-200">
           
   <div className="hero-content text-center flex-col">
-  <Image src="/brand.webp"  alt="Brand" width={200} height={200} />
+  <Image src="/brand.webp" priority loading="eager" alt="Brand" width={200} height={200} />
     <div className="max-w-md">
       <h1 className="text-5xl font-bold">Forty-Two</h1>
       <p className="py-6">一个「有点不一样」的信息分享平台</p>
