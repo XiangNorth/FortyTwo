@@ -2,7 +2,7 @@ import Image from 'next/image'
 
 export default function Intro() {
     return (
-        <div className="flex flex-col items-center w-full bg-base-200 gap-10">
+        <div className="flex flex-col items-center w-full bg-base-200 gap-10 border-t border-base-300 pt-10">
         <div className="form-control">
           <div className="input-group">
             <input type="text" placeholder="​什么是信息？" className="input input-bordered" />
