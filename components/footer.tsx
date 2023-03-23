@@ -3,7 +3,7 @@ import Image from "next/image";
 export default function Footer() {
     return (
         <>
-            <footer className="footer p-10 bg-base-200 border-t text-base-content justify-between">
+            <footer className="footer p-10 bg-base-200 border-t border-base-300 text-base-content justify-between">
                 <div>
                     <span className="footer-title">Product</span>
                     <a className="link link-hover">42 理念</a>
